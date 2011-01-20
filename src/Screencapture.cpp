@@ -9,12 +9,12 @@ int main(int argc, char** argv)
 {
 	char* filename = "screencapture.png";
 
-	if (argv[1] != NULL)
+	if (argv[1])
 		filename = argv[1];
 
 	Screenshot* image = SCREENSHOTMANAGER.captureSelectiveRegion();
 
-	if (image != NULL)
+	if (image)
 	{
 		std::cout << "Image captured, saving \u2026" << std::endl;
 

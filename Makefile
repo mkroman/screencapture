@@ -1,7 +1,7 @@
 CXX = g++
-CXXFLAGS = -Wall -g -I/usr/local/include -I/usr/include -I./include
+CXXFLAGS = -Wall -g -I/usr/local/include -I/usr/include
 LDFLAGS = -L/usr/local/lib -L /usr/lib -lgiblib -lImlib2 -lfreetype -lz -lX11 -lXext -ldl -lm
-SOURCES = source/Screencapture.cpp source/ScreenshotManager.cpp source/Screenshot.cpp
+SOURCES = src/Screencapture.cpp src/ScreenshotManager.cpp src/Screenshot.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 EXECUTABLE = screencapture
 
@@ -11,7 +11,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
 
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE)
+	-rm -f $(OBJECTS) $(EXECUTABLE)
 
 .cpp.o:
 	$(CXX) -c $< $(CXXFLAGS) $(LDFLAGS) -o $@
